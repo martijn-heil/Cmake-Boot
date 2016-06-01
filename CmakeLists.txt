@@ -1,10 +1,18 @@
 cmake_minimum_required(VERSION 3.4)
 project(CmakeBoot)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 -pedantic")
+
+include_directories(
+    include/
+)
 
 set(SOURCE_FILES
     src/main.c
+
+
+    include/lib/test.c
+    include/lib/test.h
 )
 
 add_executable(CmakeBoot ${SOURCE_FILES})
